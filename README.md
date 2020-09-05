@@ -1,5 +1,5 @@
 # FreqWords
-URL: https://freqeords.com
+URL: https://freqwords.com
 
 Run freqwords locally:
 ```bash
