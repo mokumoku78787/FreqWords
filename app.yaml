@@ -1,0 +1,22 @@
+runtime: nodejs10
+
+instance_class: F1
+
+automatic_scaling:
+  max_instances: 3
+  min_instances: 1
+
+
+handlers:
+  - url: /static
+    static_dir: build/static
+    secure: always
+  - url: /(.*\.(json|ico|js|png))$
+    static_files: build/\1
+    upload: build/.*\.(json|ico|js|png)$
+    secure: always
+  - url: .*
+    static_files: build/index.html
+    upload: build/index.html
+    expiration: '0s'
+    secure: always
